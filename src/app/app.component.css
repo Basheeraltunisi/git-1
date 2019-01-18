@@ -1,0 +1,54 @@
+body {
+    background: #6f8cff;
+}
+button{
+  background: #6f8cff;
+  margin-left: 10rem;
+  border-radius: 0.6rem;
+
+}
+input{
+  border-radius: 0.6rem;
+  margin-left: 7.5rem;
+}
+.well {
+  padding: 1rem 1rem;
+  box-shadow: 16px 16px 5px 0px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+  border-radius: 0.6rem;
+  background: #4f66ff;
+  width: 450px; 
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+  	text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+h1,
+h2,
+h3 {
+  color: #fdfbfb;
+}
+.date {
+  color: #ff998e;
+  font-size: 0.9rem;
+  padding-top: -0.1rem;
+}
+.temp {
+  font-size: 5rem;
+  padding-bottom: 0.4rem;
+}
+.fa-sun-o{
+  display: inline-block;
+  width: 100%;
+    text-align:center;
+  	text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+.fa-sun-o {
+    color: #ffe055;
+    font-size: 3.5em;
+  margin-top: 1.2rem;
+}

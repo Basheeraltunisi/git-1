@@ -1,0 +1,107 @@
+
+
+
+
+<div class='container'>
+
+
+
+  <div class='well'>
+   <div>
+    <h2> Search Weather</h2>
+    <input type="text" [formControl]="term" placeholder="Search Your City" />
+    <!-- <ion-item>    
+        <ion-label color="light" >Search 
+          
+            </ion-label>
+             <ion-input [(ngModel)] = "search" name="search"></ion-input> 
+             <input type="text" [formControl]="term"/> 
+          </ion-item> -->
+
+    <ul>
+      <button *ngFor="let item of items | async "   (click)="searchweather(item)">
+      {{item}}</button>
+    </ul>
+    </div>
+ 
+    <div class="row">
+      <div class="col-md-12">
+        <h2 id='location'> {{ this.weatherdata.city}}
+          </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class='date' id='date'></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <h1  class='date' id='now'>temperature {{ this.weatherdata.temp}}</h1>
+      </div>
+      <div class="col-sm-6" *ngIf="clearsky">
+       <h1  class='date' id='now'> Description {{ this.weatherdata.Rainfall}}</h1>
+      </div>
+       <div class="col-sm-6" *ngIf="cloudy">
+             <h1  class='date' id='now'> Description {{ this.weatherdata.Rainfall}}</h1>
+ 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h3  class='date'>mintemperature {{this.weatherdata.temp_min}}</h3>
+      </div>
+      <div class="col-sm-3">
+        <h3  class='date'>maxtemperature {{this.weatherdata.temp_max}}</h3>
+      </div>
+     
+    </div>
+    <div class="row">
+     
+      <div class="col-sm-3">
+        <h3 class='date'>windspeed {{this.weatherdata.windspeed}} km p/h</h3>
+      </div>
+      <div class="col-sm-3">
+        <h3 class='date'>winddirection {{this.weatherdata.deg}}</h3>
+      </div>
+    </div>
+        <br>
+        
+            <div class="row">
+      <div class="col-sm-3">
+        <h3  class='date'>longitude {{this.weatherdata.longitude}}</h3>
+      </div>
+      <div class="col-sm-3">
+        <h3  class='date'>latitude {{this.weatherdata.latitude}} </h3>
+      </div>
+      <div class="col-sm-3">
+        <h3  class='date'>sunrise {{this.weatherdata.sunrise}}</h3>
+      </div>
+      <div class="col-sm-3">
+        <h3  class='date'>sunset {{this.weatherdata.sunset}}</h3>
+      </div>
+    </div>
+                <div class="row">
+      <div class="col-sm-3">
+        <h3 class='date' id='f1_date'>pressure {{this.weatherdata.pressure}}</h3>
+      </div>
+      <div class="col-sm-3">
+        <h3 class='date' id='f2_date'>humidity {{this.weatherdata.humidity}}</h3>
+      </div>
+     
+     
+    </div>
+  </div>
+   <button  (click)="forcasttemp()">
+      Show Temp Graph
+      </button>
+  <button  (click)="forcastrain()">
+      Show Rain Graph
+      </button>
+        <button  (click)="forcastsnow()">
+      Show Snow Graph
+      </button>
+   <div *ngIf="chart">
+  <canvas id="canvas">{{ chart }}</canvas>
+</div>
+</div>
